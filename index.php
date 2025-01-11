@@ -140,17 +140,18 @@ include "koneksi.php";
         <div id="carouselExample" class="carousel slide">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="img/gal1.jpg" class="d-block w-100" alt="..." />
+              <img src="img/20241212134545.jpg" class="d-block w-100" alt="..." />
             </div>
+            <?php
+                $sql = "SELECT * FROM gallery ORDER BY id DESC";
+                $hasil = $conn->query($sql); 
+
+                while($row = $hasil->fetch_assoc()){
+            ?>
             <div class="carousel-item">
-              <img src="img/gal2.jpg" class="d-block w-100" alt="..." />
+              <img src="img/<?php echo $row['gambar']?>" class="d-block w-100" alt="..." />
             </div>
-            <div class="carousel-item">
-              <img src="img/gal4.jpg" class="d-block w-100" alt="..." />
-            </div>
-            <div class="carousel-item">
-              <img src="img/gal5.jpg" class="d-block w-100" alt="..." />
-            </div>
+                <?php }; ?>
           </div>
           <button
             class="carousel-control-prev"
@@ -259,7 +260,7 @@ include "koneksi.php";
         <div class="d-sm-flex align-items-center justify-content-center">
           <div class="p-3">
             <img
-              src="img/profil.png"
+              src="img/20241212134545.jpg"
               class="rounded-circle border shadow"
               width="300"
             />
